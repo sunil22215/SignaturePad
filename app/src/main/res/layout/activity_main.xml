@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sign="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-    <SearchView
+
+    <com.kyanogen.signatureview.SignatureView
+        android:id="@+id/signature_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        sign:backgroundColor="#ffffff"
+        sign:enableSignature="true"
+        sign:penColor="@color/colorAccent"
+        sign:penSize="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Search" />
+    </LinearLayout>
+
+    <EditText
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Search Here"/>
-
-    <com.kyanogen.signatureview.SignatureView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:sign="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-
-        android:id="@+id/signature_view"
-        sign:enableSignature="true"
-        sign:penSize="3dp"
-        sign:backgroundColor="#ffffff"
-        sign:penColor="@color/colorAccent"/>
-
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLEAR"/>
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAVE"/>
-
-    <ImageView
-        android:id="@+id/ivPath"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:id="@+id/tvPath"
-        android:layout_width="100dp"
-        android:gravity="center"
-        android:layout_height="50dp"/>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_margin="8dp"
+        android:queryHint="Search Here" />
 </LinearLayout>
