@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 bitmap = signatureView.getSignatureBitmap();
 
-                SpannableStringBuilder builder = new SpannableStringBuilder();
+               // SpannableStringBuilder builder = new SpannableStringBuilder();
 
                // imageView.setImageBitmap(bitmap);
                 TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
